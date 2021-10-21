@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>input-lang tag demo</title>
+<script type="module" src="./input-lang.js"></script>
+</head><body>
+
+<section>
+<h1>input-lang tag demo</h1>
+<input-lang id=inp1></input-lang>
+
+<input id=res placeholder="result">
+
+<button id=btn>set value eng;zho</button>
+
+<div id=test2></div>
+
+</section>
+
+<footer>
+  <hr>
+  <a href=https://fukuno.jig.jp/3372>by @taisukef</a>, <a href=https://github.com/code4fukui/input-lang/>src on GitHub</a>
+</footer>
+
+<script type="module">
+inp1.onchange = () => {
+  res.value = inp1.value;
+};
+btn.onclick = () => inp1.value = "eng;zho";
+</script>
+
+<script type="module">
+import { InputLang } from "./input-lang.js";
+
+const inp2 = new InputLang({ value: "eng" });
+test2.appendChild(inp2);
+</script>
+  
+<style>
+section {
+  margin: 1em 3em;
+  white-space: pre-wrap;
+}
+footer {
+  margin: 3em;
+}
+</style>
+
+</body></html>
