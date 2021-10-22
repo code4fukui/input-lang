@@ -1,7 +1,7 @@
 # input-lang
 
 - 言語入力ボックス
-- https://code4fukui.github.io/input-ling/
+- https://code4fukui.github.io/input-lang/
 
 ## usage
 
