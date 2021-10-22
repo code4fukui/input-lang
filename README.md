@@ -1,13 +1,13 @@
-# input-week
+# input-lang
 
-- サービス曜日入力ボックス
-- https://code4fukui.github.io/input-week/
+- 言語入力ボックス
+- https://code4fukui.github.io/input-lang/
 
 ## usage
 
 ```html
-<script type="module" src="https://code4fukui.github.io/input-week/input-week.js"></script>
-<input-week id=inp></input-week>
+<script type="module" src="https://code4fukui.github.io/input-lang/input-lang.js"></script>
+<input-lang id=inp></input-lang>
 
 <script type="module">
 onload = () => {
