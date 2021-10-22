@@ -9,22 +9,22 @@
 
 <input id=res placeholder="result">
 
-<button id=btn>set value eng;zho</button>
+<button id=btn>set value eng;chi;zbl</button>
 
 <div id=test2></div>
 
 </section>
 
 <footer>
-  <hr>
-  <a href=https://fukuno.jig.jp/3372>by @taisukef</a>, <a href=https://github.com/code4fukui/input-lang/>src on GitHub</a>
+<hr>
+<a href=https://fukuno.jig.jp/3372>by @taisukef</a>, <a href=https://github.com/code4fukui/input-lang/>src on GitHub</a>
 </footer>
 
 <script type="module">
 inp1.onchange = () => {
   res.value = inp1.value;
 };
-btn.onclick = () => inp1.value = "eng;zho";
+btn.onclick = () => inp1.value = "eng;chi;zbl";
 </script>
 
 <script type="module">
@@ -41,6 +41,10 @@ section {
 }
 footer {
   margin: 3em;
+}
+
+input-lang select, input-lang label {
+  margin-right: .5em;
 }
 </style>
 
