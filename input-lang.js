@@ -4,6 +4,7 @@ const LANGS = [
   { name_ja: "英語", langcode: "eng" },
   { name_ja: "中国語", langcode: "zho" },
   { name_ja: "韓国語", langcode: "kor" },
+  { name_ja: "ベトナム語", langcode: "vie" },
   { name_ja: "ポルトガル語", langcode: "por" },
 ];
 
