@@ -36,13 +36,19 @@ class InputLang extends HTMLElement {
     }
   }
   set value(v) {
+    if (!v) {
+      return;
+    }
     const langs = v.split(";");
+    console.log(v, langs);
+    if (!langs || !Array.isArray(langs)) {
+      return;
+    }
     this.querySelectorAll("input").forEach((inp, idx) => {
       const n = langs.indexOf(inp.value);
       inp.checked = n >= 0;
       langs[n] = null;
     });
-    console.log(langs.filter(l => l));
     this.other.value = langs.filter(l => l);
   }
   get value() {
