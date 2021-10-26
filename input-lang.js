@@ -3,7 +3,8 @@ import { ISO639 } from "https://code4fukui.github.io/LangCode/ISO639.js";
 import { InputMultiSelect } from "https://code4fukui.github.io/input-multi-select/input-multi-select.js";
 
 const IGNORES = ["日本語"];
-const LANGS = ["英語", "中国語", "韓国語", "ベトナム語", "ポルトガル語"];
+//const LANGS = ["英語", "中国語", "韓国語", "ベトナム語", "ポルトガル語"];
+const LANGS = ["英語", "中国語", "韓国語"];
 class InputLang extends HTMLElement {
   constructor(opts) {
     super();
@@ -11,8 +12,9 @@ class InputLang extends HTMLElement {
   }
   async init(opts = {}) {
     setAttributes(this, opts);
+    const div1 = create("div", this);
     for (const lang of LANGS) {
-      const lbl = create("label", this);
+      const lbl = create("label", div1);
       const chk = create("input", lbl);
       chk.type = "checkbox";
       const span = create("span", lbl);
@@ -20,6 +22,9 @@ class InputLang extends HTMLElement {
       const langcode = await ISO639.encode(lang);
       chk.value = langcode;
     }
+    const div2 = create("div", this);
+    div2.textContent = "その他の言語は下記から選んでください。";
+
     //const sel = await createSelect();
     const data = (await ISO639.list()).filter(l => IGNORES.indexOf(l.lang_ja) == -1 || LANGS.indexOf(l.lang_ja) != -1);
     data.sort((a, b) => a.lang_ja.localeCompare(b.lang_ja));
@@ -40,7 +45,6 @@ class InputLang extends HTMLElement {
       return;
     }
     const langs = v.split(";");
-    console.log(v, langs);
     if (!langs || !Array.isArray(langs)) {
       return;
     }
