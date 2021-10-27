@@ -36,8 +36,9 @@ class InputLang extends HTMLElement {
     this.appendChild(sel);
     this.other = sel;
 
-    if (opts.value) {
-      this.value = opts.value;
+    const val = this.getAttribute("value");
+    if (val) {
+      this.value = val;
     }
   }
   set value(v) {
@@ -58,12 +59,12 @@ class InputLang extends HTMLElement {
         langs[n] = null;
       }
     });
-    const ot = langs.filter(l => l);
-    console.log(langs, ot);
-    if (!ot) {
-      return;
+    if (this.other) {
+      const ot = langs.filter(l => l);
+      this.other.value = ot;
+    } else {
+      this.setAttribute("value", v);
     }
-    this.other.value = ot;
   }
   get value() {
     const res = [];
