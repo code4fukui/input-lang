@@ -10,6 +10,7 @@
 
 <input id=res placeholder="result">
 <button id=btn>set value eng;chi;zbl</button>
+<button id=btnerr>set value en</button>
 <div id=test2></div>
 </section>
 
@@ -23,6 +24,7 @@ inp1.onchange = () => {
   res.value = inp1.value;
 };
 btn.onclick = () => inp1.value = "eng;chi;zbl";
+btnerr.onclick = () => inp1.value = "en";
 </script>
 
 <script type="module">

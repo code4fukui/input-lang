@@ -51,9 +51,12 @@ class InputLang extends HTMLElement {
     this.querySelectorAll("input").forEach((inp, idx) => {
       const n = langs.indexOf(inp.value);
       inp.checked = n >= 0;
-      langs[n] = null;
+      if (n >= 0) {
+        langs[n] = null;
+      }
     });
-    this.other.value = langs.filter(l => l);
+    const ot = langs.filter(l => l);
+    this.other.value = ot;
   }
   get value() {
     const res = [];
