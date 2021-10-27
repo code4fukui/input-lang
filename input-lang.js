@@ -59,6 +59,10 @@ class InputLang extends HTMLElement {
       }
     });
     const ot = langs.filter(l => l);
+    console.log(langs, ot);
+    if (!ot) {
+      return;
+    }
     this.other.value = ot;
   }
   get value() {
