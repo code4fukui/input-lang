@@ -45,7 +45,10 @@ class InputLang extends HTMLElement {
       return;
     }
     const langs = v.split(";");
-    if (!langs || !Array.isArray(langs)) {
+    if (!langs) {
+      return;
+    }
+    if (!Array.isArray(langs)) {
       return;
     }
     this.querySelectorAll("input").forEach((inp, idx) => {
